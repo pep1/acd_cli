@@ -61,6 +61,7 @@ _CREATION_SCRIPT = """
         FOREIGN KEY(child) REFERENCES nodes (id)
     );
 
+    CREATE INDEX ix_parentage_child ON parentage(child);
     CREATE INDEX ix_nodes_names ON nodes(name);
     PRAGMA user_version = 2;
     """
